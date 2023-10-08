@@ -16,7 +16,7 @@ class Start_Page extends StatefulWidget {
 class _Start_PageState extends State<Start_Page> {
 
   _Start_PageState() {
-    Utils.log( 'Start_Page.dart', '[[ init "${ Config.appName }" version ${ Config.appVersion } ]]' );
+    Utils.log( 'Start_Page.dart', '[[ init "${ Config.app_name }" version ${ Config.app_version } ]]' );
   }
 
   // (this page) variables
@@ -82,7 +82,7 @@ class _Start_PageState extends State<Start_Page> {
                   child: Text( 'End_Page() >>' ),
                   onPressed: () {
                     Utils.log( _fileName, 'go to End_Page()');
-                    Future.delayed( Duration(milliseconds: Config.shortDelay ), () async {
+                    Future.delayed( Duration(milliseconds: Config.short_delay ), () async {
                       Navigator.of(context).pushNamed('End_Page');         
                       return;
                     });                         

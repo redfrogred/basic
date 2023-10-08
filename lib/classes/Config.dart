@@ -8,28 +8,29 @@ import 'package:flutter/material.dart';
 
 class Config {
   
-  static const  String    appName                = "basic";
-  static const  String    appVersion             = "1.0.alpha.1";
+  static const  String    app_name                  = "basic";
+  static const  String    app_version               = "1.0.alpha.1";
   
   // App status  
-  static bool             appInitialized         = false;           //  after StartPage loaded, it is init'ed
+  static bool             app_initialized           = false;           //  after StartPage loaded, it is init'ed
     
     // timeouts and delays
-  static int              serverTimeout           = 10; // seconds
-  static int              shortDelay              = 500; // milliseconds
-  static int              longDelay               = 1500; // milliseconds
+  static int              server_timeout            = 10; // seconds
+  static int              short_delay               = 500; // milliseconds
+  static int              long_delay                = 1500; // milliseconds
 
   // global "CSS" styles
-  static Color            mainBackgroundColor     = const Color(0xFF1A1A1A);
-  static Color            mainFontColor           = Colors.white;
-  static const double     mainFontSize            = 16;
-  static Color            buttonBackgroundColor   = Colors.cyan.shade400;
-  static Color            accent1Color            = Colors.grey;
-  static Color            accent2Color            = const Color(0xFF333333);
-  static Color            hilite1Color            = Colors.cyan.shade400;
+  static Color            main_background_color     = const Color(0xFF1A1A1A);
+  static Color            main_font_color           = Colors.white;
+  static const double     main_font_size            = 16;
+  static Color            button_background_color   = Colors.cyan.shade400;
+  static Color            accent1_color             = Colors.grey;
+  static Color            accent2_color             = const Color(0xFF333333);
+  static Color            hilite1_color             = Colors.cyan.shade400;
 
   // global "status" colors (for errors, warning, etc.)
-  static List<Color> statusColor = [
+  static List<Color> status_color = [
+    Colors.grey,
     Colors.white,
     Colors.green,
     Colors.orange,

@@ -7,6 +7,7 @@ import 'package:flutter/foundation.dart';
 //  does console logs (with a timestamp and
 //  a ">>" which is used to filter stuff out
 //  in the debug console.)
+//  For a *REALLY* thourough explanation see END NOTES below...
 
 class Utils {
 
@@ -46,10 +47,17 @@ class Utils {
   //    1. filename is the calling file
   //    2. message is the message to log
   static void log( String filename, String message ) {
-    if (kDebugMode) {
+    if ( kDebugMode ) {
       print('(${ showTimeDiff() }) >> ($filename) $message');
     }
   }
 
 }
+//  END NOTES
+//  The goal of this class is to have utility stuff in one place.
+//  In the future, it will have:
+//    * String methods (like truncation)
+//    * More robust logging
+//      + possibly a blacklist ( to not log certain files )
+//      + possibly a "log" String ( to keep a running log, not just a console one)
   

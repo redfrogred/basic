@@ -33,7 +33,7 @@ class End_Page extends StatelessWidget {
                   child: const Text( '<< Start_Page()' ),
                   onPressed: () {
                     Utils.log( _fileName, 'pop()');
-                    Future.delayed( Duration(milliseconds: Config.shortDelay ), () async {
+                    Future.delayed( Duration(milliseconds: Config.short_delay ), () async {
                       Navigator.of(context).pop();
                       //  if I didn't use "pop" here, and instead used
                       //  Navigator.of(context).pushNamed('Start_Page')

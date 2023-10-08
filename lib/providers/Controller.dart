@@ -9,10 +9,10 @@ class Controller with ChangeNotifier {
   
   void initApp() {
     //  Start_Page is loaded
-    if( !Config.appInitialized ) { 
+    if( !Config.app_initialized ) { 
       Utils.log( _fileName, 'initApp() called for the first time');
       //  do any initial housekeeping here
-      Config.appInitialized = true;
+      Config.app_initialized = true;
     }
     else {
       Utils.log( _fileName, 'initApp() called, but ignored (cuz the App was already initialized)');
@@ -22,7 +22,7 @@ class Controller with ChangeNotifier {
   
   // APP STUFF
   String getAppInfo() {
-    return Config.appVersion;
+    return Config.app_version;
   }
 
 }
