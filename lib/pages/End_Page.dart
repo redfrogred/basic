@@ -1,6 +1,7 @@
 // ignore_for_file: camel_case_types
 
 import 'package:flutter/material.dart';
+import '../classes/Config.dart';
 import '../classes/Utils.dart';
 
 class End_Page extends StatelessWidget {
@@ -32,7 +33,7 @@ class End_Page extends StatelessWidget {
                   child: const Text( '<< Start_Page()' ),
                   onPressed: () {
                     Utils.log( _fileName, 'pop()');
-                    Future.delayed( Duration(milliseconds: 333 ), () async {
+                    Future.delayed( Duration(milliseconds: Config.shortDelay ), () async {
                       Navigator.of(context).pop();
                       //  if I didn't use "pop" here, and instead used
                       //  Navigator.of(context).pushNamed('Start_Page')
