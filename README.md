@@ -9,6 +9,7 @@ There are two markdown files:
 * NOTES.md is for longer stuff (often mentioned in this README)...
 
 ## LEFT OFF
+* added shared package (and Stored class)
 * corrected variable names (with underscores)
 
 ## NEXT STEPS
