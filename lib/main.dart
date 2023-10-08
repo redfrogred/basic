@@ -24,7 +24,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         textTheme: TextTheme(
-          bodyText2: TextStyle(color: Config.mainFontColor, fontSize: Config.mainFontSize),
+          bodyText2: TextStyle( color: Config.main_font_color, fontSize: Config.main_font_size ),
         ), 
         appBarTheme: const AppBarTheme(
           backgroundColor: Color(0xFF232323),
@@ -41,7 +41,7 @@ class MyApp extends StatelessWidget {
         elevatedButtonTheme: ElevatedButtonThemeData(
             style: ButtonStyle(
               backgroundColor:
-                MaterialStateProperty.all<Color>( Config.buttonBackgroundColor ),
+                MaterialStateProperty.all<Color>( Config.button_background_color ),
               padding: MaterialStateProperty.all<EdgeInsets>(const EdgeInsets.fromLTRB(10,10,10,10)),
             ),
           ),
