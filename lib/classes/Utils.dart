@@ -42,13 +42,12 @@ class Utils {
   //  =============
   //  == The LOG ==
   //  =============
-  //  This takes 2 paramaters. (A third optional one is not used for this
-  //  simple version of log.)
+  //  This takes 2 paramaters.
   //    1. filename is the calling file
   //    2. message is the message to log
-  static void log( String filename, String message, [ int num = 2 ]) {
+  static void log( String filename, String message ) {
     if (kDebugMode) {
-      print('(${ showTimeDiff() }) >>  ($filename) $message');
+      print('(${ showTimeDiff() }) >> ($filename) $message');
     }
   }
 
