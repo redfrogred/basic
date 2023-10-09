@@ -19,10 +19,14 @@ class Controller with ChangeNotifier {
     //  Start_Page is loaded
     if( !Config.app_initialized ) { 
       Utils.log( _fileName, 'initApp() called for the first time');
+      //  add keyboard listener (if in debug mode only)
+      if ( kDebugMode ) {
+        RawKeyboard.instance.addListener(_handleKeyDown);
+      }
       //  do any initial housekeeping here
       Config.app_initialized = true;
-      //  add keyboard listener
-      RawKeyboard.instance.addListener(_handleKeyDown);
+      //  WILLFIX:  check if the app has been loaded before
+      //            using Stored()
     }
     else {
       Utils.log( _fileName, 'initApp() called, but ignored (cuz the App was already initialized)');
@@ -47,6 +51,9 @@ class Controller with ChangeNotifier {
     return stored.str[ key ];
   } 
 
+  //  ===============
+  //  KEYBOARD CLICKS
+  //  ===============
   void _handleKeyDown(RawKeyEvent value) {
     if( kReleaseMode || Config.keyboard_listener == false ) { 
       return; // Don't let these hooks slip into release!
@@ -54,11 +61,12 @@ class Controller with ChangeNotifier {
     if (value is RawKeyDownEvent) {
       final k = value.logicalKey.keyLabel;
       switch ( k ) {
-        case 'A':
-          Utils.log(_fileName, '_handleKeyDown = "A"');
+        case 'S':
+          Utils.log(_fileName, '_handleKeyDown = "$k"');
+          stored.showAllStoredValues();
           break;
         default:
-          Utils.log(_fileName, '_handleKeyDown ( with unused key )');          
+          Utils.log(_fileName, '_handleKeyDown ( with unused key "$k" )');          
       }      
     }
   }  
