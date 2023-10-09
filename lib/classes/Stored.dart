@@ -2,6 +2,7 @@
 
 import 'package:shared_preferences/shared_preferences.dart';
 import 'Utils.dart';
+import 'Date.dart';
 
 //  Presenting the "Stored" class version 1.03...
 //  This class uses the shared_preferences package, with the goal
@@ -38,13 +39,16 @@ class Stored {
   //  create an associative array for all of the stored 
   //  integers... if there are no values, use: Map<String, int> num = {}
   Map<String, int> num = {
-    'app_loaded_total_num'           : 0,
+    'app_loaded_total_num'            : 0,
+    'app_days_since_last_use'         : 0,
   };
 
   //  create an associative array for all of the stored 
   //  Strings... if there are no values, use: Map<String, String> str = {}
   Map<String, String> str = {
-    'app_last_lifecycle_event'       : '',
+    'app_date_first_run'              : '',
+    'app_date_last_run'               : '',
+    'app_last_lifecycle_event'        : '',
   };
 
   Stored() {
@@ -127,6 +131,24 @@ class Stored {
   // bump up the app loaded count
   void incrementAppLoaded() {
     int? c = num[ 'app_loaded_total_num' ]!;
+    String? l = str[ 'app_date_last_run' ]!;
+
+    //  today's date
+    String todays_date = Date.todaysDate();
+
+    //  is this first ever app run?
+    if ( c == 0 ) {
+      setVar('app_date_first_run', todays_date );
+      setVar('app_date_last_run', todays_date );
+      setVar('app_days_since_last_use', 0);
+    }
+    else {
+      //  store app_days_since_last_use
+      int d = Date.getTimeApartInDays( DateTime.parse(l), DateTime.parse(todays_date) );
+      setVar('app_days_since_last_use', d);
+    }
+
+    //  store app loaded count
     c++;
     num[ 'app_loaded_total_num' ] = c;
     setVar('app_loaded_total_num', c);

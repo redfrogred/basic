@@ -87,12 +87,12 @@ class Utils {
     int num = str.length;
     //  first check length ( needs to be greater than 2 )
     if ( num < 3 ) {
-      Utils.log( _fileName, 'fixDanglingComma() did nothing');
+      //  Utils.log( _fileName, 'fixDanglingComma() did nothing');
       return str; // return the original string
     } 
     else {
       if ( str.substring(str.length - 2) != ', ') {
-        Utils.log( _fileName, 'fixDanglingComma() did nothing');
+        //  Utils.log( _fileName, 'fixDanglingComma() did nothing');
         return str; // return the original string
       }
       else {
@@ -109,13 +109,13 @@ class Utils {
           }  
         }
         else {
-          Utils.log( _fileName, 'fixDanglingComma() did nothing');
+          //  Utils.log( _fileName, 'fixDanglingComma() did nothing');
           return str; // return the original string
         }
       } 
     }
 
-    Utils.log( _fileName, 'fixDanglingComma() returns "$return_str"');
+    //  Utils.log( _fileName, 'fixDanglingComma() returns "$return_str"');
     return return_str;
   }    
 

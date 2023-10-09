@@ -27,6 +27,7 @@ class Controller with ChangeNotifier {
       Config.app_initialized = true;
       //  WILLFIX:  check if the app has been loaded before
       //            using Stored()
+      //  stored.setVar( 'app_date_last_run', 'smile1' );
     }
     else {
       Utils.log( _fileName, 'initApp() called, but ignored (cuz the App was already initialized)');
@@ -62,9 +63,13 @@ class Controller with ChangeNotifier {
       final k = value.logicalKey.keyLabel;
       switch ( k ) {
         case 'S':
-          Utils.log(_fileName, '_handleKeyDown = "$k"');
+          Utils.log(_fileName, '_handleKeyDown = "$k"');  //  show stores vals
           stored.showAllStoredValues();
           break;
+        case 'F':
+          Utils.log(_fileName, '_handleKeyDown = "$k"');  // factoryReset()
+          stored.factoryReset();
+          break;          
         default:
           Utils.log(_fileName, '_handleKeyDown ( with unused key "$k" )');          
       }      
