@@ -1,6 +1,8 @@
 // ignore_for_file: file_names
 
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import '../classes/Stored.dart';
 import '../classes/Config.dart';
 import '../classes/Utils.dart';
@@ -19,6 +21,8 @@ class Controller with ChangeNotifier {
       Utils.log( _fileName, 'initApp() called for the first time');
       //  do any initial housekeeping here
       Config.app_initialized = true;
+      //  add keyboard listener
+      RawKeyboard.instance.addListener(_handleKeyDown);
     }
     else {
       Utils.log( _fileName, 'initApp() called, but ignored (cuz the App was already initialized)');
@@ -42,5 +46,21 @@ class Controller with ChangeNotifier {
   Future<String?> getStoredString( String key ) async {
     return stored.str[ key ];
   } 
+
+  void _handleKeyDown(RawKeyEvent value) {
+    if( kReleaseMode || Config.keyboard_listener == false ) { 
+      return; // Don't let these hooks slip into release!
+    }
+    if (value is RawKeyDownEvent) {
+      final k = value.logicalKey.keyLabel;
+      switch ( k ) {
+        case 'A':
+          Utils.log(_fileName, '_handleKeyDown = "A"');
+          break;
+        default:
+          Utils.log(_fileName, '_handleKeyDown ( with unused key )');          
+      }      
+    }
+  }  
 
 }

@@ -1,4 +1,4 @@
-# BASIC
+# BASIC (version 1.0.alpha.2)
 This repo is a boilerplate for new projects.
 
 ## DESCRIPTION
@@ -9,8 +9,10 @@ There are two markdown files:
 * NOTES.md is for longer stuff (often mentioned in this README)...
 
 ## LEFT OFF
+* added keyboard input (in Utils)
 * added shared package (and Stored class)
 * corrected variable names (with underscores)
 
 ## NEXT STEPS
-* about to add provider package
+* make date1 branch, then:
+* add the date class, then put first_run in stored class...
