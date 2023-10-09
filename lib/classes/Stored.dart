@@ -3,7 +3,7 @@
 import 'package:shared_preferences/shared_preferences.dart';
 import 'Utils.dart';
 
-//  Presenting the "Stored" class...
+//  Presenting the "Stored" class version 1.03...
 //  This class uses the shared_preferences package, with the goal
 //  of making it super-easy to grab and change Strings and ints
 //  locally, very much like cookies in the web world.

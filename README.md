@@ -9,10 +9,11 @@ There are two markdown files:
 * NOTES.md is for longer stuff (often mentioned in this README)...
 
 ## LEFT OFF
+* made date2 branch
+* made date1 branch, added date class)
 * added keyboard input (in Utils)
 * added shared package (and Stored class)
 * corrected variable names (with underscores)
 
 ## NEXT STEPS
-* make date1 branch, then:
-* add the date class, then put first_run in stored class...
+* put first_run in stored class...
