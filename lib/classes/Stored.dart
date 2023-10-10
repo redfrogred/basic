@@ -34,7 +34,11 @@ class Stored {
   static const String _fileName     = 'Stored.dart';
   static const double _version      = 1.03;  // the version of this class last updated 2023-10-08
   static const bool   _add_to_log   = false;
+  static bool _ready = false;
   static late SharedPreferences     prefs;
+
+  //  bool ready => get _ready;
+  bool get ready => _ready;
 
   //  create an associative array for all of the stored 
   //  integers... if there are no values, use: Map<String, int> num = {}
@@ -144,7 +148,7 @@ class Stored {
     }
     else {
       //  store app_days_since_last_use
-      int d = Date.getTimeApartInDays( DateTime.parse(l), DateTime.parse(todays_date) );
+      int d = Date.getTimeApartInDays( DateTime.parse(todays_date), DateTime.parse(l) );
       setVar('app_days_since_last_use', d);
     }
 
@@ -154,6 +158,9 @@ class Stored {
     setVar('app_loaded_total_num', c);
     
     if ( _add_to_log ) { Utils.log(  _fileName, 'incrementAppLoaded() | app_loaded_total_num = ' + num[ 'app_loaded_total_num' ].toString() ); }
+
+    //  d
+    _ready = true;
   }  
 
   //  show all stored values!

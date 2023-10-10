@@ -25,14 +25,30 @@ class Controller with ChangeNotifier {
       }
       //  do any initial housekeeping here
       Config.app_initialized = true;
-      //  WILLFIX:  check if the app has been loaded before
-      //            using Stored()
-      //  stored.setVar( 'app_date_last_run', 'smile1' );
+      //  see if Stored has fetched variables with appReady()
+      appReady();
     }
     else {
       Utils.log( _fileName, 'initApp() called, but ignored (cuz the App was already initialized)');
     }
 
+  }
+
+  //  appReady() is a recursive function that makes sure
+  //  all of the needed stored vlues are retrieved from
+  //  local storage...
+  void appReady() {
+    if( stored.ready == true ) { 
+        Utils.log( _fileName, 'Yes, the appReady() !!!' );
+        stored.setVar( 'app_date_last_run', '2023-01-01' );        
+        return;
+    }
+    else {
+      Future.delayed( const Duration(milliseconds: 50 ), () async {
+        appReady();
+        return;
+      });
+    }
   }
   
 
@@ -69,7 +85,11 @@ class Controller with ChangeNotifier {
         case 'F':
           Utils.log(_fileName, '_handleKeyDown = "$k"');  // factoryReset()
           stored.factoryReset();
-          break;          
+          break;         
+        case 'R':
+          Utils.log(_fileName, '_handleKeyDown = "$k"');  // 
+          appReady();
+          break;              
         default:
           Utils.log(_fileName, '_handleKeyDown ( with unused key "$k" )');          
       }      

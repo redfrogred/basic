@@ -9,6 +9,7 @@ There are two markdown files:
 * NOTES.md is for longer stuff (often mentioned in this README)...
 
 ## LEFT OFF
+* made date2c branch (storage fix in place)
 * made date2 branch
 * made date1 branch, added date class)
 * added keyboard input (in Utils)
@@ -16,5 +17,8 @@ There are two markdown files:
 * corrected variable names (with underscores)
 
 ## NEXT STEPS
-* make date3 branch... left off ln: 23 COntroller
+* make date3 branch...
+    + add log page ("L")
 * put first_run in stored class...
+* clean up Stored (remove "_add_to_log")
+* add blacklist to Utils
