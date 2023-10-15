@@ -6,14 +6,19 @@ import 'package:flutter/services.dart';
 import '../classes/Stored.dart';
 import '../classes/Config.dart';
 import '../classes/Utils.dart';
+import '../classes/Sound.dart';
 
 class Controller with ChangeNotifier {
 
   //  (this class) variables
   static const String _fileName = 'Controller.dart'; 
   
-  // Helper classes !!
+  //  Helper classes !!
   Stored stored = Stored();   //  fetch the stored "cookie"
+
+  //  Sounds!
+  final alarm1        = Sound(sound_file: 'alarm1.mp3');
+  final bell1         = Sound(sound_file: 'bell1.mp3');
 
   void initApp() {
     //  Start_Page is loaded
@@ -78,6 +83,14 @@ class Controller with ChangeNotifier {
     if (value is RawKeyDownEvent) {
       final k = value.logicalKey.keyLabel;
       switch ( k ) {
+        case '1':
+          Utils.log(_fileName, '_handleKeyDown = "$k"');  // factoryReset()
+          bell1.play( 5 );
+          break; 
+        case '2':
+          Utils.log(_fileName, '_handleKeyDown = "$k"');  // factoryReset()
+          alarm1.play( 5 );
+          break;           
         case 'S':
           Utils.log(_fileName, '_handleKeyDown = "$k"');  //  show stores vals
           stored.showAllStoredValues();

@@ -9,9 +9,9 @@ There are two markdown files:
 * NOTES.md is for longer stuff (often mentioned in this README)...
 
 ## LEFT OFF
-* made branch stored2
+* added sound2
 
 ## NEXT STEPS
-* sound?
+* I found many naming convention issues (like _fileName)
 * add another package?
 * revisit branches (prune main branch)?
