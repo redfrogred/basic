@@ -16,6 +16,7 @@ dependencies:
   provider: ^6.0.2
   shared_preferences: ^2.2.0
   intl: ^0.18.1
+  just_audio: ^0.9.29
   
 dev_dependencies:
   flutter_test:
@@ -26,5 +27,6 @@ dev_dependencies:
 flutter:
 
   uses-material-design: true
-  #assets:
+  assets:
+    - assets/audio/
   #  - assets/images/
