@@ -1,4 +1,4 @@
-# BASIC (version 1.0.alpha.2)
+# BASIC (version 1.0.alpha.3)
 This repo is a boilerplate for new projects.
 
 ## DESCRIPTION

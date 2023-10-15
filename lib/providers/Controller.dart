@@ -35,7 +35,7 @@ class Controller with ChangeNotifier {
   }
 
   //  appReady() is a recursive function that makes sure
-  //  all of the needed stored vlues are retrieved from
+  //  all of the needed stored values are retrieved from
   //  local storage...
   void appReady() {
     if( stored.ready == true ) { 

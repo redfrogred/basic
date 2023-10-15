@@ -9,7 +9,7 @@ import 'package:flutter/material.dart';
 class Config {
   
   static const  String    app_name                  = "basic";
-  static const  String    app_version               = "1.0.alpha.2";
+  static const  String    app_version               = "1.0.alpha.3";
   
   //  App status  
   static bool             app_initialized           = false;           //  after StartPage loaded, it is init'ed
