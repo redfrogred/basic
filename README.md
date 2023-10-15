@@ -9,9 +9,16 @@ There are two markdown files:
 * NOTES.md is for longer stuff (often mentioned in this README)...
 
 ## LEFT OFF
-* added sound2
+* added intro sound after appReady!
+* fixed naming convention issues (like _filename)
 
 ## NEXT STEPS
-* I found many naming convention issues (like _fileName)
-* add another package?
-* revisit branches (prune main branch)?
+* first app?
+* revisit early versions ? (now that main is cleaned up)
+
+## KEYBOARD CONTROL
+1 - play bell
+2 - play alarm
+F - factory reset stored values
+S - show stored values
+R - test if App ready? 

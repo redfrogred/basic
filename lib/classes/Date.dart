@@ -9,7 +9,7 @@ import './Utils.dart';
 class Date {
 
   // (this page) variables
-  static const String _fileName = 'Date.dart';
+  static const String _filename = 'Date.dart';
 
   //  --------------------------------------------------------------------------------
 
@@ -27,7 +27,7 @@ class Date {
   //  "2022-11-27 13:04:26.233525"
   static DateTime makeTimestampAsDateTime() {
     final DateTime now = DateTime.now();
-    Utils.log( _fileName, 'makeTimestampAsDateTime() returns ' + now.toString());
+    Utils.log( _filename, 'makeTimestampAsDateTime() returns ' + now.toString());
     return now;
   }
 
@@ -37,7 +37,7 @@ class Date {
   //  a String like "1:11pm"
   static String getFriendlyTime( DateTime date ) {
     final DateFormat formatter = DateFormat('h:mm a');
-    Utils.log( _fileName, 'getFriendlyTime() returns ' + formatter.format(date).toLowerCase());
+    Utils.log( _filename, 'getFriendlyTime() returns ' + formatter.format(date).toLowerCase());
     return formatter.format(date).toLowerCase();
   }
 
@@ -51,7 +51,7 @@ class Date {
     final int weeks;
     final int years;
 
-    // Utils.log(_fileName, 'getRelativeTimeApart() returns a String...');
+    // Utils.log(_filename, 'getRelativeTimeApart() returns a String...');
 
     if ( diff.inSeconds < 60 ) {
       return 'just now';

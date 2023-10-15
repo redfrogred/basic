@@ -12,9 +12,9 @@ import 'package:flutter/foundation.dart';
 class Utils {
 
   // (this page) variables
-  static const String _fileName = 'Utils.dart';
+  static const String _filename = 'Utils.dart';
   //  the first timestamp
-  static final int _originalTimeStamp = DateTime.now().millisecondsSinceEpoch;
+  static final int _original_timestamp = DateTime.now().millisecondsSinceEpoch;
   //  running Log String
   static String _running_log = '';  //  this is a capture of what console.log has printed
   
@@ -31,7 +31,7 @@ class Utils {
   //  ==============================  
   static String showTimeDiff ( [bool allowHtml = false ]) {
     String val = '';
-    int diff = timeStampNow() - _originalTimeStamp;
+    int diff = timeStampNow() - _original_timestamp;
     double minute = 0;
     if ( diff < 60000 ) {
       double seconds = diff * .001;
@@ -100,12 +100,12 @@ class Utils {
     int num = str.length;
     //  first check length ( needs to be greater than 2 )
     if ( num < 3 ) {
-      //  Utils.log( _fileName, 'fixDanglingComma() did nothing');
+      Utils.log( _filename, 'fixDanglingComma() did nothing');
       return str; // return the original string
     } 
     else {
       if ( str.substring(str.length - 2) != ', ') {
-        //  Utils.log( _fileName, 'fixDanglingComma() did nothing');
+        Utils.log( _filename, 'fixDanglingComma() did nothing');
         return str; // return the original string
       }
       else {
@@ -122,13 +122,13 @@ class Utils {
           }  
         }
         else {
-          //  Utils.log( _fileName, 'fixDanglingComma() did nothing');
+          Utils.log( _filename, 'fixDanglingComma() did nothing');
           return str; // return the original string
         }
       } 
     }
 
-    //  Utils.log( _fileName, 'fixDanglingComma() returns "$return_str"');
+    Utils.log( _filename, 'fixDanglingComma() returns "$return_str"');
     return return_str;
   }    
 

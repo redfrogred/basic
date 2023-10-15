@@ -20,13 +20,13 @@ class _Start_PageState extends State<Start_Page> {
   }
 
   // (this page) variables
-  static const String _fileName = 'Start_Page.dart';
+  static const String _filename = 'Start_Page.dart';
   
   // (this page) init and dispose
   @override
   void initState() {
     super.initState();
-    Utils.log( _fileName, 'initState()' );
+    Utils.log( _filename, 'initState()' );
     WidgetsBinding.instance.addPostFrameCallback((_) => _addPostFrameCallbackTriggered(context));
 
     //  init the app
@@ -35,13 +35,13 @@ class _Start_PageState extends State<Start_Page> {
 
   @override
   void dispose() {
-    Utils.log( _fileName, 'dispose()');
+    Utils.log( _filename, 'dispose()');
     super.dispose();
   }
 
   // (this page) methods
   void _buildTriggered() {
-    Utils.log( _fileName, '_buildTriggered()');
+    Utils.log( _filename, '_buildTriggered()');
   }
   
 
@@ -53,7 +53,7 @@ class _Start_PageState extends State<Start_Page> {
   }
 
   void _addPostFrameCallbackTriggered( context ) {
-    Utils.log( _fileName, '_addPostFrameCallbackTriggered()');
+    Utils.log( _filename, '_addPostFrameCallbackTriggered()');
   }
 
   // (this page) build
@@ -71,7 +71,7 @@ class _Start_PageState extends State<Start_Page> {
             resizeToAvoidBottomInset: false,  
             //  backgroundColor: Config.mainBackgroundColor,
             appBar: AppBar(
-              title: const Text( _fileName ),
+              title: const Text( _filename ),
               centerTitle: true,
             ), //AppBar
             // drawer: DrawerWidget(),
@@ -81,7 +81,7 @@ class _Start_PageState extends State<Start_Page> {
                 child: ElevatedButton(
                   child: Text( 'End_Page() >>' ),
                   onPressed: () {
-                    Utils.log( _fileName, 'go to End_Page()');
+                    Utils.log( _filename, 'go to End_Page()');
                     Future.delayed( Duration(milliseconds: Config.short_delay ), () async {
                       Navigator.of(context).pushNamed('End_Page');         
                       return;
