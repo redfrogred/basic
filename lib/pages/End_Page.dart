@@ -12,9 +12,11 @@ class End_Page extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    Utils.log( _filename, 'initialized' );
     return WillPopScope(
       onWillPop: () async {
-        //  is back button allowed?        
+        //  is back button allowed?    
+        Utils.log( _filename, 'pop() from AppBar');    
         return true;
       },
       child: SafeArea(
@@ -32,7 +34,7 @@ class End_Page extends StatelessWidget {
                 child: ElevatedButton(
                   child: const Text( '<< Start_Page()' ),
                   onPressed: () {
-                    Utils.log( _filename, 'pop()');
+                    Utils.log( _filename, 'pop() from body');
                     Future.delayed( Duration(milliseconds: Config.short_delay ), () async {
                       Navigator.of(context).pop();
                       //  if I didn't use "pop" here, and instead used

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'classes/Config.dart';
+import 'classes/Utils.dart';
 import 'providers/Controller.dart';
 import './pages/_AllPages.dart';
 
@@ -18,8 +19,12 @@ runApp(
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
+  // (this page) variables
+  static const String _filename = 'main.dart';  
+
   @override
   Widget build(BuildContext context) {
+    Utils.log( _filename,'== init "${ Config.app_name }" version ${ Config.app_version } ==');
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
