@@ -6,7 +6,7 @@ import 'package:flutter/services.dart';
 import '../classes/Stored.dart';
 import '../classes/Config.dart';
 import '../classes/Utils.dart';
-import '../classes/Sound_Clip.dart';
+import '../classes/Sound.dart';
 
 class Controller with ChangeNotifier {
 
@@ -17,8 +17,8 @@ class Controller with ChangeNotifier {
   Stored stored = Stored();   //  fetch the stored "cookie"
 
   //  Sounds!
-  final alarm1        = SoundClip(fileName: 'alarm1.mp3');
-  final bell1         = SoundClip(fileName: 'bell1.mp3');
+  final alarm1        = Sound(sound_file: 'alarm1.mp3');
+  final bell1         = Sound(sound_file: 'bell1.mp3');
 
   void initApp() {
     //  Start_Page is loaded

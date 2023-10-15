@@ -16,7 +16,7 @@ dependencies:
   provider: ^6.0.2
   shared_preferences: ^2.2.0
   intl: ^0.18.1
-  just_audio: ^0.9.29
+  just_audio: ^0.9.35
   
 dev_dependencies:
   flutter_test:
