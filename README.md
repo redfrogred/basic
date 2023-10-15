@@ -1,4 +1,4 @@
-# BASIC
+# BASIC (version 1.0.alpha.3)
 This repo is a boilerplate for new projects.
 
 ## DESCRIPTION
@@ -9,8 +9,9 @@ There are two markdown files:
 * NOTES.md is for longer stuff (often mentioned in this README)...
 
 ## LEFT OFF
-* added shared package (and Stored class)
-* corrected variable names (with underscores)
+* made branch stored2
 
 ## NEXT STEPS
-* about to add provider package
+* sound?
+* add another package?
+* revisit branches (prune main branch)?

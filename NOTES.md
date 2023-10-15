@@ -8,7 +8,7 @@ This is a place for stuff that doesn't fit under README
 "enhanced1"   
 + "basic" plus Provider package, plus a Config that has some simple app info and styling   
 
-"stored1"   
+"stored2"   
 + "enhanced" plus "shared_preferences" package (and "Stored" class)
 
 "main"   
@@ -19,3 +19,13 @@ NAMING CONVENTIONS
 * variables be "lowercase_with_hyphens"   
 * methods be "camelCased()"...  
 * classes will be capitalized, and always have the filename exactly match the class name (so the "Config" class is "Config.dart", for instance)
+
+KEYBOARD INPUT
+For debugging, I am using phsycial keyboard input. See:
+https://blog.gskinner.com/archives/2021/04/flutter-accelerate-your-testing-with-keyboard-listeners.html
+Basically, in Controller, if kDebug AND Config.keyboard_listener == true, each keypress calls "_handleKeyDown()" which examines if a key should do something (like toggle debug mode).
+
+
+
+
+

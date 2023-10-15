@@ -1,4 +1,4 @@
-// ignore_for_file: file_names
+// ignore_for_file: file_names, constant_identifier_names, non_constant_identifier_names
 
 import 'package:flutter/material.dart';
 
@@ -9,12 +9,15 @@ import 'package:flutter/material.dart';
 class Config {
   
   static const  String    app_name                  = "basic";
-  static const  String    app_version               = "1.0.alpha.1";
+  static const  String    app_version               = "1.0.alpha.3";
   
-  // App status  
+  //  App status  
   static bool             app_initialized           = false;           //  after StartPage loaded, it is init'ed
     
-    // timeouts and delays
+  //  Debug stuff
+  static bool             keyboard_listener         = true;           //  listen to Windows keyboard clicks?
+
+  //  timeouts and delays
   static int              server_timeout            = 10; // seconds
   static int              short_delay               = 500; // milliseconds
   static int              long_delay                = 1500; // milliseconds
@@ -28,7 +31,7 @@ class Config {
   static Color            accent2_color             = const Color(0xFF333333);
   static Color            hilite1_color             = Colors.cyan.shade400;
 
-  // global "status" colors (for errors, warning, etc.)
+  //  global "status" colors (for errors, warning, etc.)
   static List<Color> status_color = [
     Colors.grey,
     Colors.white,

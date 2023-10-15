@@ -15,6 +15,8 @@ class Utils {
   static const String _fileName = 'Utils.dart';
   //  the first timestamp
   static final int _originalTimeStamp = DateTime.now().millisecondsSinceEpoch;
+  //  running Log String
+  static String _running_log = '';  //  this is a capture of what console.log has printed
   
   //  ==============================
   //  return current timestamp in ms
@@ -28,18 +30,24 @@ class Utils {
   //  and the original one
   //  ==============================  
   static String showTimeDiff ( [bool allowHtml = false ]) {
+    String val = '';
     int diff = timeStampNow() - _originalTimeStamp;
     double minute = 0;
     if ( diff < 60000 ) {
       double seconds = diff * .001;
-      return '${seconds.toStringAsFixed(1)}s';
+      val = '${seconds.toStringAsFixed(1)}s';
     }
     else {
       minute = diff/60000;
       double remainder = diff%60000;
       remainder = remainder*.001;
-      return '${minute.toInt()}m ${remainder.toStringAsFixed(1)}s';
+      val = '${minute.toInt()}m ${remainder.toStringAsFixed(1)}s';
     }
+    //  if value has a minus, remove it!
+    if ( val == '-0.0s' ) {
+      val = '0.0s';
+    }
+    return val;
   }
 
   //  =============
@@ -48,9 +56,14 @@ class Utils {
   //  This takes 2 paramaters.
   //    1. filename is the calling file
   //    2. message is the message to log
+  //  NOTE: If the file name is blacklisted it
+  //        will not be shown 
   static void log( String filename, String message ) {
-    if ( kDebugMode ) {
-      print('(${ showTimeDiff() }) >> ($filename) $message');
+    if ( !blacklist.contains( filename )) {
+      if ( kDebugMode ) {
+        print('(${ showTimeDiff() }) >> ($filename) $message');
+      }
+      _running_log += "(${ showTimeDiff() }) >> ($filename) $message\r\n";
     }
   }
 
@@ -87,12 +100,12 @@ class Utils {
     int num = str.length;
     //  first check length ( needs to be greater than 2 )
     if ( num < 3 ) {
-      Utils.log( _fileName, 'fixDanglingComma() did nothing');
+      //  Utils.log( _fileName, 'fixDanglingComma() did nothing');
       return str; // return the original string
     } 
     else {
       if ( str.substring(str.length - 2) != ', ') {
-        Utils.log( _fileName, 'fixDanglingComma() did nothing');
+        //  Utils.log( _fileName, 'fixDanglingComma() did nothing');
         return str; // return the original string
       }
       else {
@@ -109,15 +122,27 @@ class Utils {
           }  
         }
         else {
-          Utils.log( _fileName, 'fixDanglingComma() did nothing');
+          //  Utils.log( _fileName, 'fixDanglingComma() did nothing');
           return str; // return the original string
         }
       } 
     }
 
-    Utils.log( _fileName, 'fixDanglingComma() returns "$return_str"');
+    //  Utils.log( _fileName, 'fixDanglingComma() returns "$return_str"');
     return return_str;
   }    
+
+
+  //  BLACKLIST
+  static List<String> blacklist = [
+    /*
+    'Utils.dart',
+    'Controller.dart',
+    'Stored.dart',
+    'Start_Page.dart'
+    */
+    'Stored.dart'
+  ];
 
 }
 //  END NOTES

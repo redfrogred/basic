@@ -2,8 +2,9 @@
 
 import 'package:shared_preferences/shared_preferences.dart';
 import 'Utils.dart';
+import 'Date.dart';
 
-//  Presenting the "Stored" class...
+//  Presenting the "Stored" class version 1.03...
 //  This class uses the shared_preferences package, with the goal
 //  of making it super-easy to grab and change Strings and ints
 //  locally, very much like cookies in the web world.
@@ -32,19 +33,26 @@ class Stored {
   //  (this page) variables
   static const String _fileName     = 'Stored.dart';
   static const double _version      = 1.03;  // the version of this class last updated 2023-10-08
-  static const bool   _add_to_log   = false;
+  static const bool   _add_to_log   = true;
+  static bool _ready = false;
   static late SharedPreferences     prefs;
+
+  //  bool ready => get _ready;
+  bool get ready => _ready;
 
   //  create an associative array for all of the stored 
   //  integers... if there are no values, use: Map<String, int> num = {}
   Map<String, int> num = {
-    'app_loaded_total_num'           : 0,
+    'app_loaded_total_num'            : 0,
+    'app_days_since_last_use'         : 0,
   };
 
   //  create an associative array for all of the stored 
   //  Strings... if there are no values, use: Map<String, String> str = {}
   Map<String, String> str = {
-    'app_last_lifecycle_event'       : '',
+    'app_date_first_run'              : '',
+    'app_date_last_run'               : '',
+    'app_last_lifecycle_event'        : '',
   };
 
   Stored() {
@@ -127,11 +135,32 @@ class Stored {
   // bump up the app loaded count
   void incrementAppLoaded() {
     int? c = num[ 'app_loaded_total_num' ]!;
+    String? l = str[ 'app_date_last_run' ]!;
+
+    //  today's date
+    String todays_date = Date.todaysDate();
+
+    //  is this first ever app run?
+    if ( c == 0 ) {
+      setVar('app_date_first_run', todays_date );
+      setVar('app_date_last_run', todays_date );
+      setVar('app_days_since_last_use', 0);
+    }
+    else {
+      //  store app_days_since_last_use
+      int d = Date.getTimeApartInDays( DateTime.parse(todays_date), DateTime.parse(l) );
+      setVar('app_days_since_last_use', d);
+    }
+
+    //  store app loaded count
     c++;
     num[ 'app_loaded_total_num' ] = c;
     setVar('app_loaded_total_num', c);
     
     if ( _add_to_log ) { Utils.log(  _fileName, 'incrementAppLoaded() | app_loaded_total_num = ' + num[ 'app_loaded_total_num' ].toString() ); }
+
+    //  d
+    _ready = true;
   }  
 
   //  show all stored values!
