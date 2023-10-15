@@ -43,7 +43,7 @@ class Sound {
     _this_sound_count++;
     _sound1.setAsset('assets/audio/' + sound_file);
     _sound1.setVolume( volume );
-    Utils.log('***','play ' + sound_file + ' ( play count = $_this_sound_count )');
+    Utils.log( _filename, 'play ' + sound_file + ' ( play count = $_this_sound_count )');
     _sound1.play();
   }
 

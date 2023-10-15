@@ -8,7 +8,7 @@ This is a place for stuff that doesn't fit under README
 "basic"
 + This just has navigation and two pages (Start and End).
 
-"enhanced1"   
+"enhanced2"   
 + "basic" plus Provider package, plus a Config that has some simple app info and styling   
 
 "stored2"   
