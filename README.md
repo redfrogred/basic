@@ -9,16 +9,9 @@ There are two markdown files:
 * NOTES.md is for longer stuff (often mentioned in this README)...
 
 ## LEFT OFF
-* made date2c branch (storage fix in place)
-* made date2 branch
-* made date1 branch, added date class)
-* added keyboard input (in Utils)
-* added shared package (and Stored class)
-* corrected variable names (with underscores)
+* made branch stored2
 
 ## NEXT STEPS
-* make date3 branch...
-    + add log page ("L")
-* put first_run in stored class...
-* clean up Stored (remove "_add_to_log")
-* add blacklist to Utils
+* sound?
+* add another package?
+* revisit branches (prune main branch)?

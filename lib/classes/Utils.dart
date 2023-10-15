@@ -141,6 +141,7 @@ class Utils {
     'Stored.dart',
     'Start_Page.dart'
     */
+    'Stored.dart'
   ];
 
 }

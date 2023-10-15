@@ -85,7 +85,7 @@ class Controller with ChangeNotifier {
         case 'F':
           Utils.log(_fileName, '_handleKeyDown = "$k"');  // factoryReset()
           stored.factoryReset();
-          break;         
+          break;                
         case 'R':
           Utils.log(_fileName, '_handleKeyDown = "$k"');  // 
           appReady();

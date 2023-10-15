@@ -33,7 +33,7 @@ class Stored {
   //  (this page) variables
   static const String _fileName     = 'Stored.dart';
   static const double _version      = 1.03;  // the version of this class last updated 2023-10-08
-  static const bool   _add_to_log   = false;
+  static const bool   _add_to_log   = true;
   static bool _ready = false;
   static late SharedPreferences     prefs;
 

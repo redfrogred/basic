@@ -8,7 +8,7 @@ This is a place for stuff that doesn't fit under README
 "enhanced1"   
 + "basic" plus Provider package, plus a Config that has some simple app info and styling   
 
-"stored1"   
+"stored2"   
 + "enhanced" plus "shared_preferences" package (and "Stored" class)
 
 "main"   
