@@ -8,13 +8,15 @@ class End_Page extends StatelessWidget {
   const End_Page({super.key});
 
   //  (this page) variables
-  static const String _fileName = 'End_Page.dart';  
+  static const String _filename = 'End_Page.dart';  
 
   @override
   Widget build(BuildContext context) {
+    Utils.log( _filename, 'initialized' );
     return WillPopScope(
       onWillPop: () async {
-        //  is back button allowed?        
+        //  is back button allowed?    
+        Utils.log( _filename, 'pop() from AppBar');    
         return true;
       },
       child: SafeArea(
@@ -22,7 +24,7 @@ class End_Page extends StatelessWidget {
           resizeToAvoidBottomInset: false,  
           //  backgroundColor: Config.mainBackgroundColor,
           appBar: AppBar(
-            title: const Text( _fileName ),
+            title: const Text( _filename ),
             centerTitle: true,
           ), 
           //  drawer: Drawer_Widget(),
@@ -32,7 +34,7 @@ class End_Page extends StatelessWidget {
                 child: ElevatedButton(
                   child: const Text( '<< Start_Page()' ),
                   onPressed: () {
-                    Utils.log( _fileName, 'pop()');
+                    Utils.log( _filename, 'pop() from body');
                     Future.delayed( Duration(milliseconds: Config.short_delay ), () async {
                       Navigator.of(context).pop();
                       //  if I didn't use "pop" here, and instead used
