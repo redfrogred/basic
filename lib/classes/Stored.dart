@@ -31,7 +31,7 @@ import 'Date.dart';
 class Stored {
 
   //  (this page) variables
-  static const String _fileName     = 'Stored.dart';
+  static const String _filename     = 'Stored.dart';
   static const double _version      = 1.03;  // the version of this class last updated 2023-10-08
   static const bool   _add_to_log   = true;
   static bool _ready = false;
@@ -56,7 +56,7 @@ class Stored {
   };
 
   Stored() {
-    Utils.log( _fileName, 'init version $_version' ); 
+    Utils.log( _filename, 'init version $_version' ); 
     init();
   }
 
@@ -72,7 +72,7 @@ class Stored {
     //  "num" is hash map (also known as an associative array).  
     //  It maps out "num's" into key/value pairs with a big loop...
     if ( num.isNotEmpty ) {
-      if ( _add_to_log ) { Utils.log( _fileName, 'Stored() num.length =  ' + num.length.toString()); }
+      if ( _add_to_log ) { Utils.log( _filename, 'Stored() num.length =  ' + num.length.toString()); }
         
       num.forEach((String key, int value) { 
         if ( prefs.getInt(key) != null ) {
@@ -83,24 +83,24 @@ class Stored {
       });
     }
     else {
-      Utils.log( _fileName, 'Stored() num.length =  0' );
+      Utils.log( _filename, 'Stored() num.length =  0' );
     }
 
     //  NOW do the STRINGs !
 
     if ( str.isNotEmpty ) { 
         
-      if ( _add_to_log ) { Utils.log( _fileName, 'Stored() str.length =  ' + str.length.toString()); }
+      if ( _add_to_log ) { Utils.log( _filename, 'Stored() str.length =  ' + str.length.toString()); }
       str.forEach((String key, String value) { 
         if ( prefs.getString(key) != null ) {
           str[key] = prefs.getString(key)!;
         }
         //  below show all the key/value pairs
-        if ( _add_to_log ) { Utils.log ( _fileName, '$key = ${ str[key] } ' ); }
+        if ( _add_to_log ) { Utils.log ( _filename, '$key = ${ str[key] } ' ); }
       });
     }
     else {
-      Utils.log( _fileName, 'Stored() str.length =  0');
+      Utils.log( _filename, 'Stored() str.length =  0');
     }
 
     //  bump up the app loaded count
@@ -115,19 +115,19 @@ class Stored {
   //  saves the associative array accordingly  
   void setVar ( String k, var v ) {
     
-    if ( _add_to_log ) { Utils.log( _fileName, 'Stored.setVar() $k = $v'); }
+    if ( _add_to_log ) { Utils.log( _filename, 'Stored.setVar() $k = $v'); }
 
     if ( v.runtimeType == String ) {
       prefs.setString(k, v);
       str[k] = v;
       
-      if ( _add_to_log ) { Utils.log( _fileName, 'setString $k = "$v"'); }
+      if ( _add_to_log ) { Utils.log( _filename, 'setString $k = "$v"'); }
     }
     else {
       prefs.setInt(k, v);
       num[k] = v;
       
-      if ( _add_to_log ) { Utils.log( _fileName, 'setInt $k = ${ v.toString() }'); }
+      if ( _add_to_log ) { Utils.log( _filename, 'setInt $k = ${ v.toString() }'); }
     }
     return;
   }
@@ -157,7 +157,7 @@ class Stored {
     num[ 'app_loaded_total_num' ] = c;
     setVar('app_loaded_total_num', c);
     
-    if ( _add_to_log ) { Utils.log(  _fileName, 'incrementAppLoaded() | app_loaded_total_num = ' + num[ 'app_loaded_total_num' ].toString() ); }
+    if ( _add_to_log ) { Utils.log(  _filename, 'incrementAppLoaded() | app_loaded_total_num = ' + num[ 'app_loaded_total_num' ].toString() ); }
 
     //  d
     _ready = true;
@@ -191,13 +191,13 @@ class Stored {
     show_str += ' )'; 
 
     
-    Utils.log(  _fileName, show_str );
+    Utils.log(  _filename, show_str );
     return;
   }
 
   void factoryReset() async {
     if ( str.isNotEmpty ) {
-      Utils.log( _fileName, 'factoryReset() with str.length =  ' + str.length.toString());  
+      Utils.log( _filename, 'factoryReset() with str.length =  ' + str.length.toString());  
       str.forEach((String key, String value) { 
         if ( prefs.getString(key) != null ) {
           setVar(key,'');
@@ -205,7 +205,7 @@ class Stored {
       });
     }    
     if ( num.isNotEmpty ) {
-      Utils.log( _fileName, 'factoryReset() with num.length =  ' + num.length.toString());  
+      Utils.log( _filename, 'factoryReset() with num.length =  ' + num.length.toString());  
       num.forEach((String key, int value) { 
         if ( prefs.getInt(key) != null ) {
           setVar(key,0);

@@ -2,6 +2,9 @@
 This is a place for stuff that doesn't fit under README
 
 ## BRANCH NAMES
+"main"   
++ This will have the latest stuff I am working on. (With all branches combined)
+
 "basic"
 + This just has navigation and two pages (Start and End).
 
@@ -11,8 +14,9 @@ This is a place for stuff that doesn't fit under README
 "stored2"   
 + "enhanced" plus "shared_preferences" package (and "Stored" class)
 
-"main"   
-+ This will have the latest stuff I am working on.
+"sound3"   
++ "stored" plus sound package and class
+
 
 ## GENERAL IDEAS
 NAMING CONVENTIONS   

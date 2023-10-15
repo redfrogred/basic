@@ -17,7 +17,7 @@ import 'Utils.dart';
 class Sound {
   
   // (this page) variables
-  static const String _fileName = 'Sound.dart';
+  static const String _filename = 'Sound.dart';
 
   //  --------------------------------------------------------------------------------  
   
@@ -27,14 +27,14 @@ class Sound {
   int _this_sound_count = 0;              // # of times *this* sound clip was played
 
   Sound( {required this.sound_file} ) {
-    Utils.log( _fileName,'initialized "$sound_file "');
+    Utils.log( _filename,'initialized "$sound_file"');
     _sound1 = AudioPlayer();
     _sound1.setVolume(0);
     _sound1.play();
   }
 
   void dispose() {
-    Utils.log( _fileName,'dispose() Sound class');
+    Utils.log( _filename,'dispose() Sound class');
     _sound1.dispose();
   }
 
