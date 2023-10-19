@@ -30,11 +30,11 @@ class MyApp extends StatelessWidget {
         textTheme: TextTheme(
           bodyText2: TextStyle( color: Config.main_font_color, fontSize: Config.main_font_size ),
         ), 
-        appBarTheme: const AppBarTheme(
-          backgroundColor: Color(0xFF232323),
-          foregroundColor: Color(0xFFffffff),
-          iconTheme: IconThemeData(color: Color(0xFFffffff)),
-          titleTextStyle: TextStyle(
+        appBarTheme: AppBarTheme(
+          backgroundColor: Config.appbar_background,
+          foregroundColor: Config.appbar_foreground,
+          iconTheme: const IconThemeData(color: Color(0xFFffffff)),
+          titleTextStyle: const TextStyle(
             height: 1,
             fontSize: 18,
           ),
