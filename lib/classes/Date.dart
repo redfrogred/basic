@@ -3,7 +3,7 @@
 import "package:intl/intl.dart";
 import './Utils.dart';
 
-//  Presenting the "Date" class version 1.01.
+//  Presenting the "Date" class version 1.25.
 //  It is for... doing date and time stuff...
 
 class Date {
@@ -87,6 +87,14 @@ class Date {
     // finally, if it gets here is it less than 2 years
     return weeks.toString() + ' weeks';
   }  
+
+  //  --------------------------------------------------------------------------------
+
+  //  ms
+  static int getTimeApartInMs( DateTime date1, DateTime date2 ) {
+    final Duration diff = date1.difference(date2);
+    return diff.inMilliseconds;
+  }
 
   //  --------------------------------------------------------------------------------
 

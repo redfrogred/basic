@@ -8,15 +8,17 @@ This is a place for stuff that doesn't fit under README
 "basic"
 + This just has navigation and two pages (Start and End).
 
-"enhanced1"   
+"enhanced3"   
 + "basic" plus Provider package, plus a Config that has some simple app info and styling   
 
 "stored2"   
 + "enhanced" plus "shared_preferences" package (and "Stored" class)
 
-"sound3"   
-+ "stored" plus sound package and class
+"sound4"   
++ "stored" plus sound package and class - last touched Oct 19, 2023
 
+"bigenchilada"
++ the latest and greatest
 
 ## GENERAL IDEAS
 NAMING CONVENTIONS   

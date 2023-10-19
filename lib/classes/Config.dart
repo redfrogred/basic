@@ -31,6 +31,9 @@ class Config {
   static Color            accent2_color             = const Color(0xFF333333);
   static Color            hilite1_color             = Colors.cyan.shade400;
 
+  static Color            appbar_background         = const Color(0xFF0C0C0C); // const Color.fromARGB(255, 174, 48, 48);
+  static Color            appbar_foreground         = const Color(0xFFFFFFFF);
+
   //  global "status" colors (for errors, warning, etc.)
   static List<Color> status_color = [
     Colors.grey,
